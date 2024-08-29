@@ -2,16 +2,11 @@
 //  UserRepository.swift
 //  angelkids
 //
-//  Created by user250318 on 8/28/24.
+//  Created by Rey Messon on 8/28/24.
 //
 
 import Foundation
 import SQLite
-
-struct User {
-    let id: Int64
-    let name: String
-}
 
 class UserRepository {
     private let db = DatabaseManager.shared.db
