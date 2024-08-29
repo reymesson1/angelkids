@@ -11,7 +11,7 @@ import SwiftUI
 struct NewItemView: View {
     @Binding var isPresented: Bool
     @Binding var title: String
-    @EnvironmentObject var viewModel: UserViewModel // Add the environment object
+    @EnvironmentObject var viewModel: UserViewModel 
 
     var body: some View {
         

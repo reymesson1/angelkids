@@ -13,17 +13,12 @@ class UserViewModel: ObservableObject {
     init(){
         loadUsers()
     }
-
-    // Example method to add a user
     func addUser(name: String) {
-        // Create a new User object
         let newUser = User(id: Int64(users.count + 1), name: name)
         
-        // Add the user to the database or local storage
         let userRepository = UserRepository()
         userRepository.insertUser(user: newUser)
         
-        // Update the users list
         loadUsers()
     }
 
