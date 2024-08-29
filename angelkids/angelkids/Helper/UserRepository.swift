@@ -8,6 +8,9 @@
 import Foundation
 import SQLite
 
+import Foundation
+import SQLite
+
 class UserRepository {
     private let db = DatabaseManager.shared.db
     private let usersTable = Table("users")
@@ -48,5 +51,14 @@ class UserRepository {
             print("Fetch failed: \(error)")
         }
         return users
+    }
+
+    func deleteUser(user: User) {
+        let userToDelete = usersTable.filter(id == user.id)
+        do {
+            try db?.run(userToDelete.delete())
+        } catch {
+            print("Delete failed: \(error)")
+        }
     }
 }

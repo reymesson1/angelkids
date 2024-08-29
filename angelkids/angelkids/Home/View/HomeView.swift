@@ -12,8 +12,9 @@ struct HomeView: View {
     @EnvironmentObject var viewModel: UserViewModel
     @State private var isPresentNewPost = false
     @State private var title = ""
-    @State private var post = ""
-    
+    @State private var itemToDelete: User? = nil
+    @State private var showingDeleteConfirmation = false
+
     var body: some View {
         NavigationView {
             Group {
@@ -28,6 +29,14 @@ struct HomeView: View {
                             VStack(alignment: .leading) {
                                 Text(item.name)
                             }
+                            .swipeActions(edge: .trailing) {
+                                Button(role: .destructive) {
+                                    itemToDelete = item
+                                    showingDeleteConfirmation = true
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                            }
                         }
                     }
                     .listStyle(InsetListStyle())
@@ -39,6 +48,18 @@ struct HomeView: View {
         .sheet(isPresented: $isPresentNewPost) {
             NewItemView(isPresented: $isPresentNewPost, title: $title)
         }
+        .alert(isPresented: $showingDeleteConfirmation) {
+            Alert(
+                title: Text("Are you sure?"),
+                message: Text("Do you want to remove this item?"),
+                primaryButton: .destructive(Text("Delete")) {
+                    if let item = itemToDelete {
+                        viewModel.deleteUser(user: item)
+                    }
+                },
+                secondaryButton: .cancel()
+            )
+        }
     }
     
     var plusButton: some View {
@@ -49,6 +70,7 @@ struct HomeView: View {
         })
     }
 }
+
 
 #Preview {
     HomeView()

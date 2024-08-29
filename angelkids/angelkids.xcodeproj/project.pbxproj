@@ -19,7 +19,7 @@
 		ED03815B2C801E2E00A0DABB /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03815A2C801E2E00A0DABB /* UserRepository.swift */; };
 		ED03815D2C801E5900A0DABB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03815C2C801E5900A0DABB /* UserViewModel.swift */; };
 		ED03815F2C801ED100A0DABB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03815E2C801ED100A0DABB /* HomeView.swift */; };
-		ED0381612C801F8400A0DABB /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0381602C801F8400A0DABB /* NewPostView.swift */; };
+		ED0381612C801F8400A0DABB /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0381602C801F8400A0DABB /* NewItemView.swift */; };
 		ED0381632C8025EE00A0DABB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0381622C8025EE00A0DABB /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		ED03815A2C801E2E00A0DABB /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		ED03815C2C801E5900A0DABB /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		ED03815E2C801ED100A0DABB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		ED0381602C801F8400A0DABB /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
+		ED0381602C801F8400A0DABB /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		ED0381622C8025EE00A0DABB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				ED03815E2C801ED100A0DABB /* HomeView.swift */,
-				ED0381602C801F8400A0DABB /* NewPostView.swift */,
+				ED0381602C801F8400A0DABB /* NewItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,7 +328,7 @@
 				ED0381282C801C3D00A0DABB /* ContentView.swift in Sources */,
 				ED0381562C801D7900A0DABB /* DatabaseHelper.swift in Sources */,
 				ED03815B2C801E2E00A0DABB /* UserRepository.swift in Sources */,
-				ED0381612C801F8400A0DABB /* NewPostView.swift in Sources */,
+				ED0381612C801F8400A0DABB /* NewItemView.swift in Sources */,
 				ED0381632C8025EE00A0DABB /* User.swift in Sources */,
 				ED03815F2C801ED100A0DABB /* HomeView.swift in Sources */,
 				ED03815D2C801E5900A0DABB /* UserViewModel.swift in Sources */,

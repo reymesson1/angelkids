@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct angelkidsApp: App {
+    @StateObject private var userViewModel = UserViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(UserViewModel())
+            ContentView().environmentObject(userViewModel)
         }
     }
 }

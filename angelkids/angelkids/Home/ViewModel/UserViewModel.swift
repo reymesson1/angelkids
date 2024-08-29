@@ -31,4 +31,10 @@ class UserViewModel: ObservableObject {
         let userRepository = UserRepository()
         users = userRepository.fetchUsers()
     }
+    
+    func deleteUser(user: User) {
+        let userRepository = UserRepository()
+        userRepository.deleteUser(user: user)
+        loadUsers()
+    }
 }
