@@ -10,7 +10,7 @@ import SQLite
 
 class DatabaseManager {
     static let shared = DatabaseManager()
-    var db: Connection? // Change access level to internal
+    var db: Connection? 
 
     private init() {
         connectToDatabase()

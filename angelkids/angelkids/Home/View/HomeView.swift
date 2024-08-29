@@ -9,50 +9,53 @@ import Foundation
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var viewModel : UserViewModel
-    @State var isPresentNewPost = false
-    @State var title = ""
-    @State var post = ""
+    @EnvironmentObject var viewModel: UserViewModel
+    @State private var isPresentNewPost = false
+    @State private var title = ""
+    @State private var post = ""
+    
     var body: some View {
-
         NavigationView {
-            
-            List {
-                
-                ForEach( viewModel.users, id: \.id ) { item in
-                    
-                    NavigationLink(
-                    
-                        destination: Text("Destination"), label: {
-                            VStack(alignment: .leading){
-                                Text(item.name)
-                                
-                            }
-                        }
-                    )
+            Group {
+                if viewModel.users.isEmpty {
+                    Text("No items")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                        .padding()
+                } else {
+                    List {
+                        ForEach(viewModel.users, id: \.id) { item in
+                            NavigationLink(
+                                destination: Text("Destination"),
+                                label: {
+                                    VStack(alignment: .leading) {
+                                        Text(item.name)
+                                    }
                                 }
-            }.listStyle(InsetListStyle())
-            
-            
-            .navigationBarTitle("Posts")
+                            )
+                        }
+                    }
+                    .listStyle(InsetListStyle())
+                }
+            }
+            .navigationBarTitle("Groceries")
             .navigationBarItems(trailing: plusButton)
-        }.sheet(isPresented: $isPresentNewPost, content: {
-            NewPostView(isPresented: $isPresentNewPost, title: $title, post: $post)
-        })
-
+        }
+        .sheet(isPresented: $isPresentNewPost) {
+            NewPostView(isPresented: $isPresentNewPost, title: $title)
+        }
     }
     
     var plusButton: some View {
-        
         Button(action: {
             isPresentNewPost.toggle()
         }, label: {
             Image(systemName: "plus")
         })
     }
-    
 }
 
 #Preview {
     HomeView()
+        .environmentObject(UserViewModel())
 }

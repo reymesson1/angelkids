@@ -11,7 +11,6 @@ import SwiftUI
 struct NewPostView: View {
     @Binding var isPresented: Bool
     @Binding var title: String
-    @Binding var post: String
     @EnvironmentObject var viewModel: UserViewModel // Add the environment object
 
     var body: some View {
@@ -22,18 +21,8 @@ struct NewPostView: View {
                 
                 Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
                 VStack(alignment: .leading) {
-                    
-                    Text("Create new post")
-                        .font(Font.system(size: 16, weight: .bold))
-                    
-                    
-                    TextField("Title", text: $title)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(6)
-                        .padding(.bottom)
-
-                    TextField("Write something...", text: $post)
+                                        
+                    TextField("Name", text: $title)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(6)
@@ -42,7 +31,7 @@ struct NewPostView: View {
                     Spacer()
                 }.padding()
             }
-            .navigationBarTitle("New Post", displayMode: .inline)
+            .navigationBarTitle("Add Items", displayMode: .inline)
             .navigationBarItems(leading: leading, trailing: trailing)
         }
     }
@@ -53,21 +42,20 @@ struct NewPostView: View {
             isPresented.toggle()
         }, label: {
             
-            Text("Cancel")
+            Text("Back")
         })
         
     }
     
     var trailing: some View{
         Button(action: {
-            print("pressed")
-            if !title.isEmpty && !post.isEmpty {
+            if !title.isEmpty {
                             viewModel.addUser(name: title) 
                             isPresented.toggle()
                         }
             
         }, label: {
-            Text("Post")
+            Text("Add")
         })
     }
     
