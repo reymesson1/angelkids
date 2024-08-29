@@ -104,4 +104,3 @@ For any questions or feedback, please contact me at reymesson@gmail.com or creat
 - **Contact Information**: reymesson@gmail.com.
 - **LICENSE File**: MIT.
 
-This README provides a clear overview of the **AngelKids Challenge** project, including setup instructions, usage details, and guidelines for contributing. Feel free to adjust the sections as needed to better fit your project’s specifics.
