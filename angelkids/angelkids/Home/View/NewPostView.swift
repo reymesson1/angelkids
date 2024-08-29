@@ -1,5 +1,5 @@
 //
-//  NewPostView.swift
+//  NewItemView.swift
 //  angelkids
 //
 //  Created by Rey Messon on 8/28/24.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct NewPostView: View {
+struct NewItemView: View {
     @Binding var isPresented: Bool
     @Binding var title: String
     @EnvironmentObject var viewModel: UserViewModel // Add the environment object

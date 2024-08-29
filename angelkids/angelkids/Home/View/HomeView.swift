@@ -25,14 +25,9 @@ struct HomeView: View {
                 } else {
                     List {
                         ForEach(viewModel.users, id: \.id) { item in
-                            NavigationLink(
-                                destination: Text("Destination"),
-                                label: {
-                                    VStack(alignment: .leading) {
-                                        Text(item.name)
-                                    }
-                                }
-                            )
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                            }
                         }
                     }
                     .listStyle(InsetListStyle())
@@ -42,7 +37,7 @@ struct HomeView: View {
             .navigationBarItems(trailing: plusButton)
         }
         .sheet(isPresented: $isPresentNewPost) {
-            NewPostView(isPresented: $isPresentNewPost, title: $title)
+            NewItemView(isPresented: $isPresentNewPost, title: $title)
         }
     }
     
