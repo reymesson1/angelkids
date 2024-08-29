@@ -25,7 +25,7 @@ struct HomeView: View {
                     
                         destination: Text("Destination"), label: {
                             VStack(alignment: .leading){
-                                Text("Navigate")
+                                Text(item.name)
                                 
                             }
                         }

@@ -9,6 +9,10 @@ import Foundation
 
 class UserViewModel: ObservableObject {
     @Published var users: [User] = []
+    
+    init(){
+        loadUsers()
+    }
 
     // Example method to add a user
     func addUser(name: String) {

@@ -62,11 +62,8 @@ struct NewPostView: View {
         Button(action: {
             print("pressed")
             if !title.isEmpty && !post.isEmpty {
-                            // Assuming the `UserViewModel` has a method to handle saving posts
-                            viewModel.addUser(name: title) // For demonstration; adjust according to your actual model
+                            viewModel.addUser(name: title) 
                             isPresented.toggle()
-                        } else {
-                            // Handle empty fields if necessary
                         }
             
         }, label: {
