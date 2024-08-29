@@ -5,6 +5,9 @@
 
 **AngelKids Challenge** is a SwiftUI application designed to manage and display a list of users. The app includes functionality to add new users, view the user list, and delete users with a confirmation prompt. It uses SQLite for data persistence, ensuring that user data is stored even when the app is closed.
 
+![image](https://github.com/user-attachments/assets/13ad2c7d-9483-4152-aca8-74b55ca19532)
+
+
 ## Features
 
 - Add new users to the list
