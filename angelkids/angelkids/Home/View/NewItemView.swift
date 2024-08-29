@@ -8,20 +8,19 @@
 import Foundation
 import SwiftUI
 
+import Foundation
+import SwiftUI
+
 struct NewItemView: View {
     @Binding var isPresented: Bool
     @Binding var title: String
-    @EnvironmentObject var viewModel: UserViewModel 
+    @EnvironmentObject var viewModel: UserViewModel
 
     var body: some View {
-        
         NavigationView {
-            
             ZStack {
-                
                 Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
                 VStack(alignment: .leading) {
-                                        
                     TextField("Name", text: $title)
                         .padding()
                         .background(Color.white)
@@ -36,27 +35,27 @@ struct NewItemView: View {
         }
     }
     
-    var leading: some View{
-        
+    var leading: some View {
         Button(action: {
             isPresented.toggle()
         }, label: {
-            
             Text("Back")
         })
-        
     }
     
-    var trailing: some View{
+    var trailing: some View {
         Button(action: {
             if !title.isEmpty {
-                            viewModel.addUser(name: title) 
-                            isPresented.toggle()
-                        }
-            
+                viewModel.addUser(name: title)
+                clearTitle()
+                isPresented.toggle()
+            }
         }, label: {
             Text("Add")
         })
     }
-    
+
+    private func clearTitle() {
+        title = ""
+    }
 }
